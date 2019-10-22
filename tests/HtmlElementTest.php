@@ -43,7 +43,9 @@ class HtmlElementTest extends TestCase
     /** @test **/
     function it_generates_a_paragraph_with_content_and_more_attributes()
     {
-        $element =  new \App\HtmlElement('p', 'Hola mundo ', ['id' => 'my_paragraph', 'class' => 'paragraph']);
+        $element =  new \App\HtmlElement(
+            'p', 'Hola mundo ', ['id' => 'my_paragraph', 'class' => 'paragraph']
+        );
 
         $this->assertSame('<p id="my_paragraph" class="paragraph">Hola mundo </p>' ,$element->render());
     }
