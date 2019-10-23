@@ -24,22 +24,16 @@ class HtmlElement
 
         $this->name = $name;
         $this->content = $content;
-        $this->attributes = $attributes;
+        $this->attributes = new HtmlAttribute($attributes);
     }
 
     public function render()
     {
-        $result = $this->openTag();
-
         if ($this->isVoid()) {
-            return $result;
+            return $this->openTag();
         }
 
-        $result .= $this->content();
-
-        $result .= $this->closeTag();
-
-        return $result;
+        return $this->openTag() . $this->content() . $this->closeTag();
     }
 
     protected function openTag()
@@ -58,13 +52,9 @@ class HtmlElement
 
     public function attributes()
     {
-        $htmlAttributes = '' ;
-
-        foreach ($this->attributes as $attribute => $value) {
-            $htmlAttributes .= $this->renderAttributes($attribute, $value);
-        }
-
-        return $htmlAttributes;
+        return array_reduce(array_keys($this->attributes), function ($result, $key){
+            return $result. $this->renderAttributes($key);
+        }, '');
     }
 
     /**
@@ -75,13 +65,13 @@ class HtmlElement
         return in_array($this->name, ['br', 'hr', 'img', 'input', 'meta']);
     }
 
-    protected function renderAttributes( $attribute, $value)
+    protected function renderAttributes( $attribute)
     {
         if (is_numeric($attribute)) {
-            return ' ' . $value;
+            return ' ' . $this->attributes[$attribute];
         }
 
-        return ' ' . $attribute . '="' . htmlentities($value, ENT_QUOTES, 'UTF-8') . '"';
+        return ' ' . $attribute . '="' . htmlentities($this->attributes[$attribute], ENT_QUOTES, 'UTF-8') . '"';
     }
 
     /**

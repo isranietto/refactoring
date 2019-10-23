@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d50936c-2cdf-42dd-a0e9-6a7aa9593ce5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/HtmlAttribute.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/HtmlElement.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/HtmlElement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/HtmlElementTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/HtmlElementTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +94,8 @@
       <updated>1571499474220</updated>
       <workItem from="1571499475334" duration="502000" />
       <workItem from="1571667050058" duration="5625000" />
-      <workItem from="1571753894524" duration="3982000" />
+      <workItem from="1571753894524" duration="4062000" />
+      <workItem from="1571841048891" duration="2060000" />
     </task>
     <servers />
   </component>
